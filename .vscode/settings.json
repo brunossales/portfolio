@@ -1,0 +1,7 @@
+{
+    "color-highlight.languages": [
+
+        "*"
+    ],
+    "css.lint.unknownAtRules": "ignore"
+}
