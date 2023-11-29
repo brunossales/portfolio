@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Nunito, PT_Sans, Poppins } from 'next/font/google'
 import { Navbar } from '@/components/Navbar'
+import { Providers } from './Providers'
 
 
 
@@ -40,9 +41,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${NunitoFont.variable} ${PTSansFont.variable} ${PoppinsFont.variable} bg-custom-purple h-screen w-screen`}>
-        <Navbar />
-        {children}
-        
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   )

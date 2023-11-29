@@ -18,6 +18,7 @@ const config: Config = {
         'custom-light-purple': '#251C31',
       },
       textColor: {
+        'custom-purple': '#1A0B2E',
         'text-title': '#41FDFF',
       },
     },

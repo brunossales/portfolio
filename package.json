@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "axios": "^1.6.2",
     "lucide-react": "^0.294.0",
     "next": "14.0.3",
     "prettier": "^3.1.0",
@@ -18,6 +19,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
     "react-hot-toast": "^2.4.1",
+    "react-query": "^3.39.3",
     "zod": "^3.22.4"
   },
   "devDependencies": {
