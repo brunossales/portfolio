@@ -1,5 +1,5 @@
-"use server"
-import api from "./api";
+'use server';
+import api from './api';
 
 export interface User {
     avatar_url: string;
@@ -9,21 +9,21 @@ export interface User {
 }
 
 interface FindUserData {
-    (): Promise<User>
+    (): Promise<User>;
 }
 
 export const findUserData: FindUserData = async () => {
     try {
-        const response = await api.get("/users/brunossales")
-            .then(response => {  
-                return response.data
+        const response = await api
+            .get('/users/brunossales')
+            .then((response) => {
+                return response.data;
             })
-            .catch(error => { 
-                throw new Error(error)
+            .catch((error) => {
+                throw new Error(error);
             });
         return response;
-    }
-    catch(error) {
-        throw new Error("Error on find user data")
+    } catch (error) {
+        throw new Error('Error on find user data');
     }
 };

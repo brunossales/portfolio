@@ -1,8 +1,8 @@
-"use server"
-import axios from "axios";
+'use server';
+import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "https://api.github.com",
+    baseURL: 'https://api.github.com',
 });
 
 export default api;

@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -7,7 +7,6 @@ import { useCallback } from 'react';
 import clsx from 'clsx';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
-
 
 const schema = z.object({
     nome: z.string().min(2).max(50),
@@ -22,61 +21,94 @@ interface FormValues {
 }
 
 export default function Contact() {
-    const { register, reset, handleSubmit, formState: { errors } } = useForm<FormValues>({
+    const {
+        register,
+        reset,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<FormValues>({
         resolver: zodResolver(schema),
-    })
+    });
 
-    const onSubmit: SubmitHandler<FormValues> = useCallback((data) => {
+    const onSubmit: SubmitHandler<FormValues> = useCallback(
+        (data) => {
+            const templateParams = {
+                from_name: data.nome,
+                message: data.mensagem,
+                email: data.email,
+            };
 
-        const templateParams = {
-            from_name: data.nome,
-            message: data.mensagem,
-            email: data.email,
-        }
-
-        emailjs.send(process.env.NEXT_PUBLIC_SETVICE_EMAIL_ID!,
-            process.env.NEXT_PUBLIC_TEMPLATE_ID!, templateParams,
-            process.env.NEXT_PUBLIC_KEY!).then(() => {
-                reset();
-                toast.success('Email enviado com sucesso!')
-            }).catch(() => {
-                toast.error('Erro ao enviar o email!')
-            })
-    }, [reset]);
-
+            emailjs
+                .send(
+                    process.env.NEXT_PUBLIC_SETVICE_EMAIL_ID!,
+                    process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+                    templateParams,
+                    process.env.NEXT_PUBLIC_KEY!
+                )
+                .then(() => {
+                    reset();
+                    toast.success('Email enviado com sucesso!');
+                })
+                .catch(() => {
+                    toast.error('Erro ao enviar o email!');
+                });
+        },
+        [reset]
+    );
 
     return (
         <div className="w-full flex flex-col items-center justify-center --font-poppins">
             <Toaster />
-            <h1 className="text-2xl text-cyan-200 font-bold pt-5">ENTRE EM CONTATO COMIGO</h1>
-            <form className='w-full flex flex-col items-center justify-center' onSubmit={handleSubmit(onSubmit)}>
+            <h1 className="text-2xl text-cyan-200 font-bold pt-5">
+                ENTRE EM CONTATO COMIGO
+            </h1>
+            <form
+                className="w-full flex flex-col items-center justify-center"
+                onSubmit={handleSubmit(onSubmit)}
+            >
                 <input
                     {...register('nome')}
-                    className={clsx("w-1/2 h-12 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none",
+                    className={clsx(
+                        'w-1/2 h-12 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none',
                         { 'border-red-500': !!errors?.nome }
                     )}
-                    type="text" placeholder="Nome"
+                    type="text"
+                    placeholder="Nome"
                 />
-                {errors.nome && <p className="text-red-500">O nome é muito grande ou não é válido</p>}
+                {errors.nome && (
+                    <p className="text-red-500">
+                        O nome é muito grande ou não é válido
+                    </p>
+                )}
 
                 <input
                     {...register('email')}
-                    className={clsx("w-1/2 h-12 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none",
+                    className={clsx(
+                        'w-1/2 h-12 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none',
                         { 'border-red-500': !!errors?.email }
                     )}
                     type="text"
                     placeholder="Email"
                 />
-                {errors.email && <p className="text-red-500">Por favor, digite um e-email válido</p>}
+                {errors.email && (
+                    <p className="text-red-500">
+                        Por favor, digite um e-email válido
+                    </p>
+                )}
 
                 <textarea
                     {...register('mensagem')}
-                    className={clsx("w-1/2 h-16 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none",
+                    className={clsx(
+                        'w-1/2 h-16 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none',
                         { 'border-red-500': !!errors?.mensagem }
                     )}
                     placeholder="Mensagem"
                 />
-                {errors.mensagem && <p className="text-red-500">Por favor, digíte no minimo 10 palavras</p>}
+                {errors.mensagem && (
+                    <p className="text-red-500">
+                        Por favor, digíte no minimo 10 palavras
+                    </p>
+                )}
 
                 <button
                     type="submit"
@@ -85,7 +117,6 @@ export default function Contact() {
                     Enviar
                 </button>
             </form>
-
         </div>
-    )
+    );
 }

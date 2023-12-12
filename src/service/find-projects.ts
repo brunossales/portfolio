@@ -1,5 +1,5 @@
-"use server"
-import api from "./api";
+'use server';
+import api from './api';
 
 export interface Repository {
     name: string;
@@ -9,21 +9,21 @@ export interface Repository {
 }
 
 interface FindUserData {
-    (): Promise<Repository[]>
+    (): Promise<Repository[]>;
 }
 
 export const findRepos: FindUserData = async () => {
     try {
-        const response = await api.get("/users/brunossales/repos")
-            .then(response => {  
-                return response.data
+        const response = await api
+            .get('/users/brunossales/repos')
+            .then((response) => {
+                return response.data;
             })
-            .catch(error => { 
-                throw new Error(error)
+            .catch((error) => {
+                throw new Error(error);
             });
         return response;
-    }
-    catch(error) {
-        throw new Error("Error on find user data")
+    } catch (error) {
+        throw new Error('Error on find user data');
     }
 };
