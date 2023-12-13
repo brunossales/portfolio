@@ -96,7 +96,7 @@ export default function Contact() {
                 <textarea
                     {...register('mensagem')}
                     className={clsx(
-                        'w-1/2 h-16 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none',
+                        'w-1/2 h-16 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 py-2 outline-none',
                         { 'border-red-500': !!errors?.mensagem }
                     )}
                     placeholder="Mensagem"
