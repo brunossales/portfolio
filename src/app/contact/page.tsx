@@ -7,6 +7,7 @@ import { useCallback } from 'react';
 import clsx from 'clsx';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
+import { Text } from '@/components/atoms/Text';
 
 const schema = z.object({
     nome: z.string().min(2).max(50),
@@ -59,9 +60,9 @@ export default function Contact() {
     return (
         <div className="w-full flex flex-col items-center justify-center --font-poppins">
             <Toaster />
-            <h1 className="text-2xl text-cyan-200 font-bold pt-5">
-                ENTRE EM CONTATO COMIGO
-            </h1>
+
+            <Text variant='primary' forceBold size='2xl' text=' ENTRE EM CONTATO COMIGO' />
+
             <form
                 className="w-full flex flex-col items-center justify-center"
                 onSubmit={handleSubmit(onSubmit)}
@@ -76,9 +77,7 @@ export default function Contact() {
                     placeholder="Nome"
                 />
                 {errors.nome && (
-                    <p className="text-red-500">
-                        O nome não é valido, digite no minimo 2 caracteres e no máximo 50
-                    </p>
+                    <Text variant='error' text=' O nome não é valido, digite no minimo 2 letras e no máximo 50' />
                 )}
 
                 <input
@@ -91,9 +90,7 @@ export default function Contact() {
                     placeholder="Email"
                 />
                 {errors.email && (
-                    <p className="text-red-500">
-                        Por favor, digite um e-email válido
-                    </p>
+                    <Text variant='error' text='O email não é valido, digite um email valido' />
                 )}
 
                 <textarea
@@ -105,9 +102,7 @@ export default function Contact() {
                     placeholder="Mensagem"
                 />
                 {errors.mensagem && (
-                    <p className="text-red-500">
-                        Por favor, digíte no minimo 10 palavras
-                    </p>
+                    <Text variant='error' text='Por favor, digíte no minimo 10 letras' />
                 )}
 
                 <button

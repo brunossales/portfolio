@@ -7,6 +7,7 @@ import androidImagePng from '../../../public/android.png';
 import { useFindUserDataHook } from '@/hooks/find-user-data.hook';
 import { User } from 'lucide-react';
 import { useMemo } from 'react';
+import { Text } from '@/components/atoms/Text';
 
 export default function About() {
     const { data: dataUser } = useFindUserDataHook();
@@ -18,9 +19,8 @@ export default function About() {
     return (
         <div className="flex flex-col items-start p-10 gap-5 w-2/3">
             <div className="flex items-center justify-center gap-3">
-                <h1 className="text-4xl font-bold text-cyan-200">
-                    SOBRE MIM
-                </h1>
+                <Text size='4xl' variant='primary' forceBold text='SOBRE MIM' />
+
                 {avatarUrl ? (
                     <Image
                         src={avatarUrl}
@@ -33,15 +33,19 @@ export default function About() {
                     <User color="white" size={50} />
                 )}
             </div>
-            <h2 className="text-2xl font-bold text-purple-200">
-                Me considero uma pessoa sociável.
-            </h2>
-            <h3 className="text-2xl font-bold text-purple-100">
-                Amo trabalhar com tecnologia, não tenho tecnologia específica,
+
+            <Text variant='secondary' forceBold size='2xl' text='Me considero uma pessoa sociável.' />
+
+            <Text
+                variant='tertiary'
+                forceBold
+                size='2xl'
+                text='Amo trabalhar com tecnologia, não tenho tecnologia específica,
                 sempre estou aberto para novos desafios. Mas meus maiores foco
                 de conhecimento e gosto são em React Native e Next.JS, junto com
-                o React.
-            </h3>
+                o React.'
+            />
+
 
             <div className="flex w-full items-center gap-5 pt-5">
                 <div className="min-h-[50px] w-fit bg-white p-2 rounded-md flex items-center">
