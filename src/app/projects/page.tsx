@@ -1,8 +1,8 @@
 'use client';
 
+import Icon from '@/components/atoms/Icon';
 import { Text } from '@/components/atoms/Text';
 import { useFindProjectsDataHook } from '@/hooks/find-projects.hook';
-import { BugOff } from 'lucide-react';
 import Link from 'next/link';
 import { useMemo } from 'react';
 
@@ -17,7 +17,7 @@ export default function Projects() {
     return (
         <div className="flex flex-col items-start p-10 w-full gap-5">
             <div className="flex items-center justify-center gap-3">
-                <BugOff color="cyan" />
+                <Icon name='bug-off' color="cyan" />
                 <Text forceBold size='2xl' className="text-cyan-300" text='MEUS PRINCIPAIS PROJETOS' />
             </div>
 
