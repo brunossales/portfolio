@@ -1,6 +1,5 @@
 import { Text } from '@/components/atoms/Text';
-import { Linkedin, Github, User } from 'lucide-react';
-import Link from 'next/link';
+import { IconLink } from '@/components/molecules/IconLink';
 import React from 'react';
 
 export default function Home() {
@@ -22,38 +21,29 @@ export default function Home() {
 
 
             <div className="flex flex-col items-start justify-center gap-5 mt-3">
-                <div className="flex gap-2 text-white">
-                    <User color="cyan" />
-                    <Link
-                        className="underline decoration-solid pt-[3px] hover:text-cyan-300"
-                        href={'https://brunossales.github.io/social-links/'}
-                        target="_blank"
-                    >
-                        Social Links
-                    </Link>
-                </div>
-                <div className="flex gap-2 text-white">
-                    <Linkedin color="cyan" />
-                    <Link
-                        className="underline decoration-solid pt-[3px] hover:text-cyan-300"
-                        href={
-                            'https://www.linkedin.com/in/bruno-sales-3a5856202/'
-                        }
-                        target="_blank"
-                    >
-                        LinkedIn
-                    </Link>
-                </div>
-                <div className="flex gap-2 text-white">
-                    <Github color="cyan" />
-                    <Link
-                        className="underline decoration-solid pt-[3px] hover:text-cyan-300"
-                        href={'https://github.com/brunossales'}
-                        target="_blank"
-                    >
-                        GitHub
-                    </Link>
-                </div>
+                <IconLink
+                    icon='user'
+                    label='Social Links'
+                    iconProps={{ color: 'cyan' }}
+                    className='underline decoration-solid pt-[3px] hover:text-cyan-300'
+                    href='https://brunossales.github.io/social-links/'
+                />
+
+                <IconLink
+                    icon='linkedin'
+                    label='LinkedIn'
+                    iconProps={{ color: 'cyan' }}
+                    className='underline decoration-solid pt-[3px] hover:text-cyan-300'
+                    href='https://www.linkedin.com/in/bruno-sales-3a5856202/'
+                />
+
+                <IconLink
+                    icon='github'
+                    label='GitHub'
+                    iconProps={{ color: 'cyan' }}
+                    className='underline decoration-solid pt-[3px] hover:text-cyan-300'
+                    href='https://github.com/brunossales'
+                />
             </div>
         </div>
     );
