@@ -3,6 +3,7 @@ import './globals.css';
 import { Nunito, PT_Sans, Poppins } from 'next/font/google';
 import { Navbar } from '@/components/organisms/Navbar';
 import { Providers } from './Providers';
+import Favicon from '../../public/react.png';
 
 const NunitoFont = Nunito({
     preload: true,
@@ -27,6 +28,7 @@ const PoppinsFont = Poppins({
 export const metadata: Metadata = {
     title: 'Porfólio Bruno',
     description: 'Esse é o portólio de Bruno',
+    icons: [{ rel: 'icon', url: Favicon.src }],
 };
 
 export default function RootLayout({

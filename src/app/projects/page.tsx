@@ -19,7 +19,6 @@ export default function Projects() {
             <div className="flex items-center justify-center gap-3">
                 <BugOff color="cyan" />
                 <Text forceBold size='2xl' className="text-cyan-300" text='MEUS PRINCIPAIS PROJETOS' />
-
             </div>
 
             {renderingProjects ? (
@@ -32,7 +31,7 @@ export default function Projects() {
                     ))}
                 </div>
             ) : (
-                <div className="grid grid-flow-row grid-cols-3 text-center gap-5">
+                <div className="grid grid-flow-row grid-cols-2 text-center gap-5 w-full justify-between 2xl:grid-cols-3">
                     {data?.map((project, index) => (
                         <div
                             key={`${index}_${project.name}`}
