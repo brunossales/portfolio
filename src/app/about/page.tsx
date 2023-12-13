@@ -34,16 +34,16 @@ export default function About() {
                 )}
             </div>
 
-            <Text variant='secondary' forceBold size='2xl' text='Me considero uma pessoa sociável.' />
+            <Text variant='secondary' forceBold size='2xl' text='Me considero uma pessoa sociável' />
 
             <Text
                 variant='tertiary'
                 forceBold
                 size='2xl'
                 text='Amo trabalhar com tecnologia, não tenho tecnologia específica,
-                sempre estou aberto para novos desafios. Mas meus maiores foco
+                sempre estou aberto para novos desafios. Meus maiores foco
                 de conhecimento e gostos são em React Native e Next.JS, junto com
-                o React.'
+                o React'
             />
 
 
