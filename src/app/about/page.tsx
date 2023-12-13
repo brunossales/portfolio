@@ -15,8 +15,6 @@ export default function About() {
         return dataUser?.avatar_url;
     }, [dataUser]);
 
-    console.log('avatarURL: ', avatarUrl);
-
     return (
         <div className="flex flex-col items-start p-10 gap-5 w-2/3">
             <div className="flex items-center justify-center gap-3">
