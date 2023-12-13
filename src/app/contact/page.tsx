@@ -61,7 +61,7 @@ export default function Contact() {
         <div className="w-full flex flex-col items-center justify-center --font-poppins">
             <Toaster />
 
-            <Text variant='primary' forceBold size='2xl' text=' ENTRE EM CONTATO COMIGO' />
+            <Text variant='primary' forceBold size='2xl' text='ENTRE EM CONTATO COMIGO' className='pt-5' />
 
             <form
                 className="w-full flex flex-col items-center justify-center"

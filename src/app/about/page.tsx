@@ -42,7 +42,7 @@ export default function About() {
                 size='2xl'
                 text='Amo trabalhar com tecnologia, não tenho tecnologia específica,
                 sempre estou aberto para novos desafios. Mas meus maiores foco
-                de conhecimento e gosto são em React Native e Next.JS, junto com
+                de conhecimento e gostos são em React Native e Next.JS, junto com
                 o React.'
             />
 

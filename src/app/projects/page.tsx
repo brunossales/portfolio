@@ -1,5 +1,6 @@
 'use client';
 
+import { Text } from '@/components/atoms/Text';
 import { useFindProjectsDataHook } from '@/hooks/find-projects.hook';
 import { BugOff } from 'lucide-react';
 import Link from 'next/link';
@@ -17,9 +18,8 @@ export default function Projects() {
         <div className="flex flex-col items-start p-10 w-full gap-5">
             <div className="flex items-center justify-center gap-3">
                 <BugOff color="cyan" />
-                <h1 className="text-2xl font-bold text-cyan-300">
-                    MEUS PRINCIPAIS PROJETOS
-                </h1>
+                <Text forceBold size='2xl' className="text-cyan-300" text='MEUS PRINCIPAIS PROJETOS' />
+
             </div>
 
             {renderingProjects ? (
