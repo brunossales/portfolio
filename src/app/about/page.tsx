@@ -20,7 +20,7 @@ export default function About() {
     return (
         <div className="flex flex-col items-start p-10 gap-5 w-2/3">
             <div className="flex items-center justify-center gap-3">
-                <h1 className="text-4xl font-bold text-custom-purple text-cyan-200">
+                <h1 className="text-4xl font-bold text-cyan-200">
                     SOBRE MIM
                 </h1>
                 {avatarUrl ? (
@@ -35,10 +35,10 @@ export default function About() {
                     <User color="white" size={50} />
                 )}
             </div>
-            <h2 className="text-2xl font-bold text-custom-purple text-purple-200">
+            <h2 className="text-2xl font-bold text-purple-200">
                 Me considero uma pessoa sociável.
             </h2>
-            <h3 className="text-2xl font-bold text-custom-purple text-purple-100">
+            <h3 className="text-2xl font-bold text-purple-100">
                 Amo trabalhar com tecnologia, não tenho tecnologia específica,
                 sempre estou aberto para novos desafios. Mas meus maiores foco
                 de conhecimento e gosto são em React Native e Next.JS, junto com

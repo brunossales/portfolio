@@ -77,7 +77,7 @@ export default function Contact() {
                 />
                 {errors.nome && (
                     <p className="text-red-500">
-                        O nome é muito grande ou não é válido
+                        O nome não é valido, digite no minimo 2 caracteres e no máximo 50
                     </p>
                 )}
 
