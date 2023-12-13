@@ -22,7 +22,7 @@ export const findUserData: FindUserData = async () => {
             .catch((error) => {
                 throw new Error(error);
             });
-        return response;
+        return response as User;
     } catch (error) {
         throw new Error('Error on find user data');
     }

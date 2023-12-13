@@ -8,11 +8,11 @@ export interface Repository {
     stargazers_count: number;
 }
 
-interface FindUserData {
+interface FindProjectsData {
     (): Promise<Repository[]>;
 }
 
-export const findRepos: FindUserData = async () => {
+export const findRepos: FindProjectsData = async () => {
     try {
         const response = await api
             .get('/users/brunossales/repos')
@@ -22,7 +22,7 @@ export const findRepos: FindUserData = async () => {
             .catch((error) => {
                 throw new Error(error);
             });
-        return response;
+        return response as Repository[];
     } catch (error) {
         throw new Error('Error on find user data');
     }
