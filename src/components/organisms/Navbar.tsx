@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import localImage from '../../public/logo.png';
+import localImage from '../../../public/logo.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
