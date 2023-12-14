@@ -39,7 +39,7 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body
-                className={`${NunitoFont.variable} ${PTSansFont.variable} ${PoppinsFont.variable} bg-custom-purple h-screen w-screen`}
+                className={`${NunitoFont.variable} ${PTSansFont.variable} ${PoppinsFont.variable} bg-custom-purple h-screen max-w-screen`}
             >
                 <Providers>
                     <Navbar />
