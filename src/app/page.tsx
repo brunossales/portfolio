@@ -21,29 +21,35 @@ export default function Home() {
 
 
             <div className="flex flex-col items-start justify-center gap-5 mt-3">
-                <IconLink
-                    icon='user'
-                    label='Social Links'
-                    iconProps={{ color: 'cyan' }}
-                    className='underline decoration-solid pt-[3px] hover:text-cyan-300'
-                    href='https://brunossales.github.io/social-links/'
-                />
+                {/* Using a composite pattern */}
+                <IconLink.Container>
+                    <IconLink.Icon icon='user' iconProps={{ color: 'cyan' }} />
+                    <IconLink.Link
+                        label='Social Links'
+                        className='underline decoration-solid pt-[3px] hover:text-cyan-300'
+                        href='https://brunossales.github.io/social-links/'
+                    />
+                </IconLink.Container>
 
-                <IconLink
-                    icon='linkedin'
-                    label='LinkedIn'
-                    iconProps={{ color: 'cyan' }}
-                    className='underline decoration-solid pt-[3px] hover:text-cyan-300'
-                    href='https://www.linkedin.com/in/bruno-sales-3a5856202/'
-                />
+                <IconLink.Container>
+                    <IconLink.Icon icon='linkedin' iconProps={{ color: 'cyan' }} />
+                    <IconLink.Link
+                        label='LinkedIn'
+                        className='underline decoration-solid pt-[3px] hover:text-cyan-300'
+                        href='https://www.linkedin.com/in/bruno-sales-3a5856202/'
+                    />
+                </IconLink.Container>
 
-                <IconLink
-                    icon='github'
-                    label='GitHub'
-                    iconProps={{ color: 'cyan' }}
-                    className='underline decoration-solid pt-[3px] hover:text-cyan-300'
-                    href='https://github.com/brunossales'
-                />
+
+                <IconLink.Container>
+                    <IconLink.Icon icon='github' iconProps={{ color: 'cyan' }} />
+                    <IconLink.Link
+                        label='Github'
+                        className='underline decoration-solid pt-[3px] hover:text-cyan-300'
+                        href='https://github.com/brunossales'
+                    />
+                </IconLink.Container>
+
             </div>
         </div>
     );
