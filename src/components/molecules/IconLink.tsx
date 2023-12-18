@@ -4,31 +4,57 @@ import { LucideProps } from 'lucide-react';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import Link from 'next/link';
 
-interface IconLinkProps {
-    href: string;
-    icon: keyof typeof dynamicIconImports;
-    iconProps?: LucideProps;
+interface IconContainerProps {
     className?: string;
-    label: string;
+    children: React.ReactNode;
 }
 
-export const IconLink = ({ href, icon, iconProps, className, label }: IconLinkProps) => {
+const IconLinkContainer = ({ className, children }: IconContainerProps) => {
+    return (
+        <div className={`flex gap-2 text-white ${className}`}>
+            {children}
+        </div>
+    );
+};
+
+interface IconProps {
+    icon: keyof typeof dynamicIconImports;
+    iconProps?: LucideProps;
+}
+
+
+const Icon = ({ iconProps, icon }: IconProps) => {
     /**
      * Importação dinâmica de ícones
      * parra evitar que todos os ícones sejam importados no build
      */
     const LucideIcon = dynamic(dynamicIconImports[icon])
 
+    return <LucideIcon {...iconProps} />
+}
+
+interface LinkProps {
+    className?: string;
+    href: string;
+    label: string;
+}
+
+const LinkComponent = ({ className, href, label }: LinkProps) => {
     return (
-        <div className="flex gap-2 text-white">
-            <LucideIcon {...iconProps} />
-            <Link
+        <Link
                 className={className}
                 href={href}
                 target="_blank"
             >
                 {label}
             </Link>
-        </div>
     );
-};
+}
+
+
+// Composite Pattern
+export const IconLink = {
+    Container: IconLinkContainer,
+    Icon,
+    Link: LinkComponent
+}
