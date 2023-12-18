@@ -1,12 +1,6 @@
 'use server';
+import { User } from '@/dto/user';
 import api from './api';
-
-export interface User {
-    avatar_url: string;
-    url: string;
-    name: string;
-    company: string;
-}
 
 interface FindUserData {
     (): Promise<User>;
