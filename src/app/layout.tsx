@@ -4,6 +4,7 @@ import { Nunito, PT_Sans, Poppins } from 'next/font/google';
 import { Navbar } from '@/components/organisms/Navbar';
 import { Providers } from './Providers';
 import Favicon from '../../public/react.png';
+import 'reflect-metadata';
 
 const NunitoFont = Nunito({
     preload: true,
