@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { Nunito, PT_Sans, Poppins } from 'next/font/google';
 import { Navbar } from '@/components/organisms/Navbar';
-import { Providers } from './Providers';
-import Favicon from '../../public/react.png';
+import type { Metadata } from 'next';
+import { Nunito, PT_Sans, Poppins } from 'next/font/google';
 import 'reflect-metadata';
+import Favicon from '../../public/react.png';
+import { Providers } from './Providers';
+import './globals.css';
 
 const NunitoFont = Nunito({
     preload: true,
