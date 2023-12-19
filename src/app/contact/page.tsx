@@ -1,13 +1,14 @@
 'use client';
 
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { useCallback } from 'react';
-import clsx from 'clsx';
-import emailjs from '@emailjs/browser';
-import toast, { Toaster } from 'react-hot-toast';
 import { Text } from '@/components/atoms/Text';
+import emailjs from '@emailjs/browser';
+import { zodResolver } from '@hookform/resolvers/zod';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { useCallback } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import toast, { Toaster } from 'react-hot-toast';
+import { z } from 'zod';
 
 const schema = z.object({
     nome: z.string().min(2).max(50),
@@ -58,7 +59,12 @@ export default function Contact() {
     );
 
     return (
-        <div className="w-full flex flex-col items-center justify-center --font-poppins">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }} 
+            className="w-full flex flex-col items-center justify-center --font-poppins"
+        >
             <Toaster />
 
             <Text variant='primary' forceBold size='2xl' text='ENTRE EM CONTATO COMIGO' className='pt-5' />
@@ -112,6 +118,6 @@ export default function Contact() {
                     Enviar
                 </button>
             </form>
-        </div>
+        </motion.div>
     );
 }
