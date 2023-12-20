@@ -1,5 +1,6 @@
+import { Text } from '@/components/atoms/Text';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { StarIcon } from 'lucide-react';
 
 type CardProjectProps = {
     name: string;
@@ -18,25 +19,34 @@ export const CardProject: React.FC<CardProjectProps> = ({
         <motion.div
             initial={{ scale: 0.95 }}
             animate={{ scale: 1 }}
-            whileHover={{ scale: 0.95, cursor: 'pointer' }}
-            className="flex flex-col items-center justify-center gap-3 py-5 bg-cyan-100 rounded-md transition-all ease-in-out delay-100"
+            onClick={() => window.open(html_url, '_blank')}
+            whileHover={{
+                scale: 0.95,
+                cursor: 'pointer',
+                opacity: 0.8,
+                transition: { duration: 0.2 },
+            }}
+            className="flex flex-col h-[180px] relative w-full! bg-white justify-between gap-3 py-8 px-5 rounded-md transition-all ease-in-out delay-100 bg-next-gif bg-contain bg-no-repeat bg-center"
         >
-            <h1 className="text-lg font-bold text-custom-purple">
-                Projeto: {index}
-            </h1>
-            <h1 className="text-lg font-bold text-custom-purple">
-                Nome: {name}
-            </h1>
-            <h1 className="text-lg font-bold text-custom-purple">
-                Favoritos: {stargazers_count}
-            </h1>
-            <Link
-                href={html_url}
-                target="_blank"
-                className="text-lg font-bold text-custom-purple underline decoration-solid hover:text-cyan-600 transition-all ease-in-out delay-100"
-            >
-                Link para o Projeto
-            </Link>
+            <Text
+                size="lg"
+                forceBold
+                className="text-cyan-600 top-1 left-3 absolute"
+                text={index.toString()}
+            />
+
+            <div className="absolute right-3 top-2 flex">
+                {Array.from({ length: stargazers_count }).map((_, i) => (
+                    <StarIcon fill="#fff000" key={i} />
+                ))}
+            </div>
+
+            <Text
+                size="lg"
+                forceBold
+                className="text-cyan-600 bottom-0 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                text={name}
+            />
         </motion.div>
     );
 };
