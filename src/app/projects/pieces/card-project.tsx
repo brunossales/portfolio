@@ -31,8 +31,8 @@ export const CardProject: React.FC<CardProjectProps> = ({
             <Text
                 size="lg"
                 forceBold
-                className="text-cyan-600 top-1 left-3 absolute"
-                text={index.toString()}
+                className="text-purple-800 top-1 left-3 absolute"
+                text={index.toString().padStart(2, '0')}
             />
 
             <div className="absolute right-3 top-2 flex">
@@ -44,7 +44,7 @@ export const CardProject: React.FC<CardProjectProps> = ({
             <Text
                 size="lg"
                 forceBold
-                className="text-cyan-600 bottom-0 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                className="text-purple-800 bottom-0 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap"
                 text={name}
             />
         </motion.div>
