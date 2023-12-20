@@ -5,6 +5,7 @@ import { useFindProjectsDataHook } from '@/hooks/find-projects.hook';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Fragment, useMemo } from 'react';
 import { CardProject } from './pieces/card-project';
+import Icon from '@/components/atoms/Icon';
 
 export default function Projects() {
     const { data, isLoading } = useFindProjectsDataHook();
@@ -26,7 +27,7 @@ export default function Projects() {
         <Fragment>
             <motion.div className="flex flex-col items-start p-10 w-full gap-5">
                 <div className="flex items-center justify-center gap-3">
-                    {/* <Icon name='bug-off' color="cyan" /> */}
+                    <Icon name="bug-off" color="cyan" />
                     <Text
                         forceBold
                         size="2xl"
