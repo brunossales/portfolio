@@ -44,7 +44,7 @@ export const CardProject: React.FC<CardProjectProps> = ({
             <Text
                 size="lg"
                 forceBold
-                className="text-purple-800 bottom-0 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                className="text-purple-800 bottom-0 absolute left-1/2 text-center text-ellipsis overflow-hidden transform -translate-x-1/2 w-4/5 md:whitespace-nowrap"
                 text={name}
             />
         </motion.div>

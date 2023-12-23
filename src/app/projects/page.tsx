@@ -50,7 +50,7 @@ export default function Projects() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="grid grid-flow-row grid-cols-2 text-center gap-5 w-full justify-between 2xl:grid-cols-3"
+                        className="grid grid-flow-row grid-cols-1 text-center gap-5 w-full justify-between md:grid-cols-2 2xl:grid-cols-3"
                     >
                         {data?.map((project, index) => (
                             <CardProject
