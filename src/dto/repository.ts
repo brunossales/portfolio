@@ -17,4 +17,7 @@ export class Repository {
 
     @Transform(({ value }) => value || 'Sem descrição')
     description: string = '';
+
+    @Transform(({ value }) => value || '')
+    created_at: string = ''
 }
