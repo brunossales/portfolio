@@ -9,7 +9,13 @@ export const useFindProjectsDataHook = () => {
         staleTime: 1000 * 60 * 1, // 1 minutes,
         queryFn: async () => {
             const response = await findRepos();
-            return plainToInstance(Repository, response);
+            return plainToInstance(
+                Repository, 
+                response.sort(
+                    (a, b) => { 
+                        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+                    })
+                );
         },
     });
     return {
