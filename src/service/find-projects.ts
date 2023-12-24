@@ -1,13 +1,6 @@
 'use server';
+import { Repository } from '@/dto/repository';
 import api from './api';
-
-export interface Repository {
-    name: string;
-    html_url: string;
-    language: string;
-    stargazers_count: number;
-}
-
 interface FindProjectsData {
     (): Promise<Repository[]>;
 }
