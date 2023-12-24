@@ -30,6 +30,14 @@ export const Navbar = () => {
                     Início
                 </Link>
                 <Link
+                    href="/career"
+                    className={clsx(classNameText, {
+                        'bg-purple-950 rounded-xl p-2': path === '/career',
+                    })}
+                >
+                    Carreira
+                </Link>
+                <Link
                     href="/about"
                     className={clsx(classNameText, {
                         'bg-purple-950 rounded-xl p-2': path === '/about',
