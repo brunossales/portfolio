@@ -4,6 +4,7 @@ import React from 'react';
 import { Text } from '@/components/atoms/Text';
 import { motion } from 'framer-motion';
 import Icon from '@/components/atoms/Icon';
+import { Line } from '@/components/atoms/Line';
 
 export default function Career() {
     return (
@@ -23,6 +24,65 @@ export default function Career() {
                     text="CARREIRA PROFISSIONAL"
                 />
             </div>
+
+            <motion.div
+                initial={{ transform: 'translateX(-100%)' }}
+                animate={{ transform: 'translateX(0)' }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col gap-8"
+            >
+                <Text
+                    variant="secondary"
+                    forceBold
+                    size="xl"
+                    text="DINHEIROW / Abril/2023 - Atualmente"
+                />
+
+                <Text
+                    variant="tertiary"
+                    forceBold
+                    size="xl"
+                    text="> Desenvolvedor WEB Front END, com teste Unitários, de Integração e E2E. 
+                Forte experiência no projeto e contribuo com refatorações, 
+                testes e na arquitetura do projeto (para evitar possíveis refatorações no futuro)."
+                />
+
+                <Line />
+
+                <Text
+                    variant="secondary"
+                    forceBold
+                    size="xl"
+                    text="FLIMED / Dezembro/2022 - Abril/2023"
+                />
+
+                <Text
+                    variant="tertiary"
+                    forceBold
+                    size="xl"
+                    text="> Desenvolvedor WEB Front END e Mobile. 
+                Atuei no desenvolvimento de novas funcionalidades, com React Native e React.JS, 
+                principal contribuição na tomada de partida no projeto mobile da empresa."
+                />
+
+                <Line />
+
+                <Text
+                    variant="secondary"
+                    forceBold
+                    size="xl"
+                    text="DELL LEAD / Agosto/2022 - Dezembro/2023"
+                />
+
+                <Text
+                    variant="tertiary"
+                    forceBold
+                    size="xl"
+                    text="> Desenvolvedor Mobile. 
+                Atuei no desenvolvimento de novas funcionalidades, com React Native, 
+                com o projeto do AppTalk, que envolvia a criação de um aplicativo de comunicação para PCDs surdos e mudos."
+                />
+            </motion.div>
         </motion.div>
     );
 }
