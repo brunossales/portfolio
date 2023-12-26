@@ -62,12 +62,18 @@ export default function Contact() {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }} 
+            transition={{ duration: 0.5 }}
             className="w-full flex flex-col items-center justify-center --font-poppins"
         >
             <Toaster />
 
-            <Text variant='primary' forceBold size='2xl' text='ENTRE EM CONTATO COMIGO' className='pt-5' />
+            <Text
+                variant="primary"
+                forceBold
+                size="2xl"
+                text="ENTRE EM CONTATO COMIGO"
+                className="pt-5"
+            />
 
             <form
                 className="w-full flex flex-col items-center justify-center"
@@ -76,39 +82,48 @@ export default function Contact() {
                 <input
                     {...register('nome')}
                     className={clsx(
-                        'w-1/2 h-12 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none',
+                        'w-1/2 h-12 rounded-md border-[3px] border-solid border-cyan-200 mt-5 px-5 outline-none focus:border-yellow-200',
                         { 'border-red-500': !!errors?.nome }
                     )}
                     type="text"
                     placeholder="Nome"
                 />
                 {errors.nome && (
-                    <Text variant='error' text=' O nome não é valido, digite no minimo 2 letras e no máximo 50' />
+                    <Text
+                        variant="error"
+                        text=" O nome não é valido, digite no minimo 2 letras e no máximo 50"
+                    />
                 )}
 
                 <input
                     {...register('email')}
                     className={clsx(
-                        'w-1/2 h-12 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none',
+                        'w-1/2 h-12 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 outline-none focus:border-yellow-200',
                         { 'border-red-500': !!errors?.email }
                     )}
                     type="text"
                     placeholder="Email"
                 />
                 {errors.email && (
-                    <Text variant='error' text='O email não é valido, digite um email valido' />
+                    <Text
+                        variant="error"
+                        text="O email não é valido, digite um email valido"
+                    />
                 )}
 
                 <textarea
                     {...register('mensagem')}
                     className={clsx(
-                        'w-1/2 h-16 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 py-2 outline-none',
+                        'w-1/2 h-16 rounded-md border-2 border-solid border-cyan-200 mt-5 px-5 py-2 outline-none focus:border-yellow-200',
                         { 'border-red-500': !!errors?.mensagem }
                     )}
                     placeholder="Mensagem"
                 />
                 {errors.mensagem && (
-                    <Text variant='error' text='Por favor, digíte no minimo 10 letras' />
+                    <Text
+                        variant="error"
+                        text="Por favor, digíte no minimo 10 letras"
+                    />
                 )}
 
                 <button
