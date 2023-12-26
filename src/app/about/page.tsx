@@ -9,6 +9,8 @@ import { useMemo } from 'react';
 import androidImagePng from '../../../public/android.png';
 import nextImagePng from '../../../public/next.png';
 import reactImagePng from '../../../public/react.png';
+import cyImagePng from '../../../public/cy.png';
+import jestPng from '../../../public/jest.png';
 
 export default function About() {
     const { data: dataUser } = useFindUserDataHook();
@@ -54,7 +56,7 @@ export default function About() {
                 text="Amo trabalhar com tecnologia, não tenho tecnologia específica,
                 sempre estou aberto para novos desafios. Meus maiores foco
                 de conhecimento e gostos são em React Native e Next.JS, junto com
-                o React"
+                o React. Forte contribuições em projetos, com refatorações e testes."
             />
 
             <div className="flex w-full items-center gap-5 pt-5">
@@ -77,6 +79,22 @@ export default function About() {
                 <div className="min-h-[50px] w-fit bg-white p-2 rounded-md flex items-center">
                     <Image
                         src={androidImagePng}
+                        alt="Bruno Sales"
+                        width={30}
+                        height={30}
+                    />
+                </div>
+                <div className="min-h-[50px] w-fit bg-white p-2 rounded-md flex items-center">
+                    <Image
+                        src={cyImagePng}
+                        alt="Bruno Sales"
+                        width={30}
+                        height={30}
+                    />
+                </div>
+                <div className="min-h-[50px] w-fit bg-white p-2 rounded-md flex items-center">
+                    <Image
+                        src={jestPng}
                         alt="Bruno Sales"
                         width={30}
                         height={30}
