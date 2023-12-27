@@ -1,5 +1,6 @@
 'use client';
 
+import Icon from '@/components/atoms/Icon';
 import { Line } from '@/components/atoms/Line';
 import { Text } from '@/components/atoms/Text';
 import { IconLink } from '@/components/molecules/IconLink';
@@ -15,12 +16,15 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col gap-5"
             >
-                <Text
-                    size="4xl"
-                    forceBold
-                    variant="primary"
-                    text="BRUNO SALES"
-                />
+                <div className="flex items-start justify-start gap-2">
+                    <Text
+                        size="2xl"
+                        forceBold
+                        variant="primary"
+                        text="BRUNO SALES"
+                    />
+                    <Icon name="user-check" style={{ color: 'cyan' }} />
+                </div>
 
                 <Text
                     size="2xl"
@@ -34,9 +38,9 @@ export default function Home() {
                     variant="tertiary"
                     forceBold
                     text="Atualmente trabalho com Next.JS para o desenvolvimento do front
-                end, React Query para o cacheamento de dados das requests,
-                TailwindCSS para a estilização e JEST para testes unitários e de
-                integração. Cypress para testes E2E."
+                    end, React Query para o cacheamento de dados das requests,
+                    TailwindCSS para a estilização e JEST para testes unitários e de
+                    integração. Cypress para testes E2E."
                 />
             </motion.div>
 
@@ -88,11 +92,13 @@ export default function Home() {
                 />
             </motion.div>
 
+            <Line />
+
             <motion.div
                 initial={{ transform: 'translateX(+200vw)' }}
                 animate={{ transform: 'translateX(0)' }}
                 transition={{ duration: 0.5 }}
-                className="flex flex-col items-start justify-center gap-5 mt-3"
+                className="flex items-start justify-center gap-5 mt-3"
             >
                 {/* Using a composite pattern */}
                 <IconLink.Container>
