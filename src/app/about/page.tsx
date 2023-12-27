@@ -55,8 +55,8 @@ export default function About() {
                 size="2xl"
                 text="Amo trabalhar com tecnologia, não tenho tecnologia específica,
                 sempre estou aberto para novos desafios. Meus maiores foco
-                de conhecimento e gostos são em React Native e Next.JS, junto com
-                o React. Forte contribuições em projetos, com refatorações e testes"
+                de conhecimento e experiências são em React Native e Next.JS, junto com
+                o React.JS. Tenho fortes contribuições em projetos, com refatorações e testes."
             />
 
             <div className="flex w-full items-center gap-5 pt-5">

@@ -42,9 +42,9 @@ export default function Career() {
                     variant="tertiary"
                     forceBold
                     size="xl"
-                    text="> Desenvolvedor WEB Front END, com teste Unitários, de Integração e E2E. 
-                Forte experiência no projeto e contribuo com refatorações, 
-                testes e na arquitetura do projeto (para evitar possíveis refatorações no futuro)."
+                    text="> Desenvolvedor WEB Front END, documentação, teste Unitários, de Integração e E2E. 
+                    Tenho forte experiência no projeto e contribuo com refatorações, 
+                    testes e na arquitetura do projeto (para evitar possíveis refatorações no futuro)."
                 />
 
                 <Line />
