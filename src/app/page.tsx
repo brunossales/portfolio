@@ -57,7 +57,7 @@ export default function Home() {
                 initial={{ transform: 'translateX(-150%)' }}
                 animate={{ transform: 'translateX(0)' }}
                 transition={{ duration: 0.5 }}
-                className="full grid grid-flow-row grid-cols-3"
+                className="flex flex-col lg:grid grid-flow-row grid-cols-3 "
             >
                 <Text
                     size="xl"

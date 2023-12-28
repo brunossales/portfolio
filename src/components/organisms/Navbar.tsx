@@ -5,14 +5,24 @@ import localImage from '../../../public/logo.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
+import { useCallback, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const className =
     'w-full h-1/6 border-0 border-solid border-b-2 border-b-white flex justify-between items-center bg-custom-light-purple px-16';
 const classNameText =
     'text-lg text-purple-50 hover:bg-purple-950 hover:p-2 hover:rounded-xl transition-all ease-in-out delay-100';
 
+const classNamePhoneText =
+    'text-lg text-purple-50 hover:scale-90  transition-all ease-in-out delay-100';
+
 export const Navbar = () => {
     const path = usePathname();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = useCallback(() => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    }, [mobileMenuOpen]);
 
     return (
         <div className={className}>
@@ -20,7 +30,42 @@ export const Navbar = () => {
                 <Image src={localImage} alt="" width={40} height={40} />
             </div>
 
-            <div className="flex items-center space-x-8">
+            {/* Botão de Navegação para Dispositivos Móveis */}
+            <button
+                className="lg:hidden text-xl text-purple-50 z-20 focus:outline-none"
+                onClick={toggleMobileMenu}
+            >
+                ☰
+            </button>
+
+            {/* Navbar para Dispositivos Móveis */}
+            {mobileMenuOpen && (
+                <motion.div
+                    initial={{ x: '100%' }}
+                    animate={{ x: 0 }}
+                    exit={{ x: '100%' }}
+                    className="lg:hidden absolute top-[16.6%] right-0 h-full w-1/2 rounded-md bg-custom-light-purple p-4 flex flex-col items-center space-y-4 bg-opacity-95 z-10"
+                >
+                    <Link href="/" className={classNamePhoneText}>
+                        Início
+                    </Link>
+                    <Link href="/career" className={classNamePhoneText}>
+                        Carreira
+                    </Link>
+                    <Link href="/about" className={classNamePhoneText}>
+                        Sobre
+                    </Link>
+                    <Link href="/projects" className={classNamePhoneText}>
+                        Projetos
+                    </Link>
+                    <Link href="/contact" className={classNamePhoneText}>
+                        Contato
+                    </Link>
+                </motion.div>
+            )}
+
+            {/* Navbar para Telas Maiores */}
+            <div className="hidden lg:flex items-center space-x-8">
                 <Link
                     href="/"
                     className={clsx(classNameText, {
