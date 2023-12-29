@@ -5,8 +5,10 @@ import localImage from '../../../public/logo.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { useMenuStore } from '@/stores/menuStore';
+import { Menu } from 'lucide-react';
 
 const className =
     'w-full h-1/6 border-0 border-solid border-b-2 border-b-white flex justify-between items-center bg-custom-light-purple px-16';
@@ -18,11 +20,11 @@ const classNamePhoneText =
 
 export const Navbar = () => {
     const path = usePathname();
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { menuIsOpen, updateMenuIsOpen } = useMenuStore();
 
     const toggleMobileMenu = useCallback(() => {
-        setMobileMenuOpen(!mobileMenuOpen);
-    }, [mobileMenuOpen]);
+        updateMenuIsOpen(!menuIsOpen);
+    }, [menuIsOpen, updateMenuIsOpen]);
 
     return (
         <div className={className}>
@@ -32,33 +34,66 @@ export const Navbar = () => {
 
             {/* Botão de Navegação para Dispositivos Móveis */}
             <button
-                className="lg:hidden text-xl text-purple-50 z-20 focus:outline-none"
-                onClick={toggleMobileMenu}
+                className="lg:hidden text-xl text-purple-50 z-20 cursor-pointer"
+                onClick={(event) => {
+                    event.stopPropagation();
+                    toggleMobileMenu();
+                }}
             >
-                ☰
+                <Menu name="menu" className="z-30" />
             </button>
 
             {/* Navbar para Dispositivos Móveis */}
-            {mobileMenuOpen && (
+            {menuIsOpen && (
                 <motion.div
                     initial={{ x: '100%' }}
                     animate={{ x: 0 }}
                     exit={{ x: '100%' }}
                     className="lg:hidden absolute top-[16.6%] right-0 h-full w-1/2 rounded-md bg-custom-light-purple p-4 flex flex-col items-center space-y-4 bg-opacity-95 z-10"
+                    onClick={(event) => event.stopPropagation()}
                 >
-                    <Link href="/" className={classNamePhoneText}>
+                    <Link
+                        href="/"
+                        className={clsx(classNamePhoneText, {
+                            'bg-purple-950 rounded-xl px-4 py-2': path === '/',
+                        })}
+                    >
                         Início
                     </Link>
-                    <Link href="/career" className={classNamePhoneText}>
+                    <Link
+                        href="/career"
+                        className={clsx(classNamePhoneText, {
+                            'bg-purple-950 rounded-xl px-4 py-2':
+                                path === '/career',
+                        })}
+                    >
                         Carreira
                     </Link>
-                    <Link href="/about" className={classNamePhoneText}>
+                    <Link
+                        href="/about"
+                        className={clsx(classNamePhoneText, {
+                            'bg-purple-950 rounded-xl px-4 py-2':
+                                path === '/about',
+                        })}
+                    >
                         Sobre
                     </Link>
-                    <Link href="/projects" className={classNamePhoneText}>
+                    <Link
+                        href="/projects"
+                        className={clsx(classNamePhoneText, {
+                            'bg-purple-950 rounded-xl px-4 py-2':
+                                path === '/projects',
+                        })}
+                    >
                         Projetos
                     </Link>
-                    <Link href="/contact" className={classNamePhoneText}>
+                    <Link
+                        href="/contact"
+                        className={clsx(classNamePhoneText, {
+                            'bg-purple-950 rounded-xl px-4 py-2':
+                                path === '/contact',
+                        })}
+                    >
                         Contato
                     </Link>
                 </motion.div>

@@ -75,7 +75,7 @@ export default function Home() {
                     size="xl"
                     variant="secondary"
                     forceBold
-                    text="> TailwindCSS"
+                    text="> TailwindCSS + Zustand"
                 />
                 <Text
                     size="xl"
