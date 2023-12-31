@@ -1,5 +1,5 @@
 <h1 align="center">
-  💻<br>Portfólio - Iuri Silva
+  💻<br>Portfólio - Bruno Sales
 </h1>
 
 ![Resultado final do projeto](https://github.com/brunossales/portfolio/blob/main/public/imagePrint.png)
