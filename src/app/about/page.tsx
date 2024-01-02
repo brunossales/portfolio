@@ -64,6 +64,7 @@ export default function About() {
                     <Image
                         src={nextImagePng}
                         alt="Bruno Sales"
+                        className="min-h-[30px] min-w-[30px] lg:min-h-fit"
                         width={30}
                         height={30}
                     />
@@ -72,6 +73,7 @@ export default function About() {
                     <Image
                         src={reactImagePng}
                         alt="Bruno Sales"
+                        className="min-h-[30px] min-w-[30px] lg:min-h-fit"
                         width={30}
                         height={30}
                     />
@@ -80,6 +82,7 @@ export default function About() {
                     <Image
                         src={androidImagePng}
                         alt="Bruno Sales"
+                        className="min-h-[30px] min-w-[30px] lg:min-h-fit"
                         width={30}
                         height={30}
                     />
@@ -88,6 +91,7 @@ export default function About() {
                     <Image
                         src={cyImagePng}
                         alt="Bruno Sales"
+                        className="min-h-[30px] min-w-[30px] lg:min-h-fit"
                         width={30}
                         height={30}
                     />
@@ -96,6 +100,7 @@ export default function About() {
                     <Image
                         src={jestPng}
                         alt="Bruno Sales"
+                        className="min-h-[30px] min-w-[30px] lg:min-h-fit"
                         width={30}
                         height={30}
                     />
