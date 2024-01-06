@@ -27,7 +27,7 @@ export const Navbar = () => {
     }, [menuIsOpen, updateMenuIsOpen]);
 
     return (
-        <div className={className}>
+        <div className={className} data-testid="navbar">
             <div className="bg-slate-100 h-fit rounded-md w-fit p-[3px] cursor-pointer transition-all ease-in-out delay-100 hover:scale-110">
                 <Image src={localImage} alt="" width={40} height={40} />
             </div>
@@ -110,6 +110,7 @@ export const Navbar = () => {
                     Início
                 </Link>
                 <Link
+                    data-testid="career"
                     href="/career"
                     className={clsx(classNameText, {
                         'bg-purple-950 rounded-xl p-2': path === '/career',
