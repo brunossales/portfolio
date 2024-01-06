@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { useMemo } from 'react';
 
-type TextProps = {
+export type TextProps = {
     text: string;
     className?: string;
     size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
@@ -35,5 +35,9 @@ export const Text: React.FC<TextProps> = ({
         [className, size, variant, forceBold]
     );
 
-    return <p className={classNames}>{text}</p>;
+    return (
+        <p className={classNames} data-testid="text-atom">
+            {text}
+        </p>
+    );
 };
