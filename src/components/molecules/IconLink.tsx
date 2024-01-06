@@ -4,7 +4,7 @@ import { LucideProps } from 'lucide-react';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import Link from 'next/link';
 
-interface IconContainerProps {
+export interface IconContainerProps {
     className?: string;
     children: React.ReactNode;
 }
@@ -15,7 +15,7 @@ const IconLinkContainer = ({ className, children }: IconContainerProps) => {
     );
 };
 
-interface IconProps {
+export interface IconProps {
     icon: keyof typeof dynamicIconImports;
     iconProps?: LucideProps;
 }
@@ -30,7 +30,7 @@ const Icon = ({ iconProps, icon }: IconProps) => {
     return <LucideIcon {...iconProps} />;
 };
 
-interface LinkProps {
+export interface LinkProps {
     className?: string;
     href: string;
     label: string;
