@@ -46,9 +46,35 @@ Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 Para a escabalidade do projeto e padronização foi preciso de alguns ajustes
 
 -   Husky & Git Hook;
+
     -   Commitlint - Para padronizações de commit (feat, fix...)
     -   Verificação de TypeScript no precommit
     -   Verificações de Lint do next no precommit
+
+-   ESLint;
+
+    -   Padronização de escrita de código e verificações
+
+-   Prettier;
+    -   Fomatador de código, mantendo padrão nas formatações e escrita
+
+---
+
+## ⚒️ Design Patterns e Padrões de escrita
+
+Para organização do projeto e melhor manutenção o projeto foi feito com escrita limpa e pensada
+
+-   Atomic Design;
+
+    -   Para a divisão de componentes
+    -   Dividos em Átomos, Moléculas e Organismos
+    -   Melhora a organização dos componentes em sua complexidade e tamanho
+
+-   Arquitetura Limpa;
+
+    -   Não uma arquitetura como a do Uncle Bob, mas com seus conceitos
+    -   Templates completamente desacoplados da lógica da regra de negócio
+    -   Toda lógica e regra divididas entre Hooks e DTO (class transform)
 
 ---
 
