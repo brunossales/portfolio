@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, act, fireEvent } from '@testing-library/react';
 import { Navbar } from '../Navbar';
 
 const className =
@@ -39,5 +39,32 @@ describe('(UNIT) Navbar Component', () => {
         expect(linkCareer).toHaveAttribute('data-testid', 'career');
         expect(linkCareer).toHaveAttribute('href', '/career');
         expect(linkCareer).toHaveTextContent('Carreira');
+    });
+
+    it('should render the navbar with responsive links and button', () => {
+        const { getByTestId, queryByTestId } = render(
+            <div className="max-w-md">
+                <Navbar />
+            </div>
+        );
+
+        const navButton = getByTestId('mobile-menu-button');
+        const navMenu = queryByTestId('mobile-menu');
+        const homeMobile = queryByTestId('home-mobile');
+
+        expect(navMenu).not.toBeInTheDocument();
+        expect(homeMobile).not.toBeInTheDocument();
+
+        expect(navButton).toBeInTheDocument();
+
+        fireEvent(navButton, new MouseEvent('click', { bubbles: true }));
+
+        act(() => {
+            const navMenu = getByTestId('mobile-menu');
+            const homeMobile = getByTestId('home-mobile');
+
+            expect(navMenu).toHaveTextContent('Início');
+            expect(homeMobile).toBeInTheDocument();
+        });
     });
 });

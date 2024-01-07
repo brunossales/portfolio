@@ -34,6 +34,7 @@ export const Navbar = () => {
 
             {/* Botão de Navegação para Dispositivos Móveis */}
             <button
+                data-testid="mobile-menu-button"
                 className="lg:hidden text-xl text-purple-50 z-20 cursor-pointer"
                 onClick={(event) => {
                     event.stopPropagation();
@@ -51,12 +52,14 @@ export const Navbar = () => {
                     exit={{ x: '100%' }}
                     className="lg:hidden absolute top-[16.6%] right-0 h-full w-1/2 rounded-md bg-custom-light-purple p-4 flex flex-col items-center space-y-4 bg-opacity-95 z-10"
                     onClick={(event) => event.stopPropagation()}
+                    data-testid="mobile-menu"
                 >
                     <Link
                         href="/"
                         className={clsx(classNamePhoneText, {
                             'bg-purple-950 rounded-xl px-4 py-2': path === '/',
                         })}
+                        data-testid="home-mobile"
                     >
                         Início
                     </Link>
