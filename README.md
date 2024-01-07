@@ -26,6 +26,7 @@ Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 -   React 8;
 -   Tailwind;
 -   Zustand;
+-   JEST;
 -   React Hook Form;
 -   Axios;
 -   React Query;
